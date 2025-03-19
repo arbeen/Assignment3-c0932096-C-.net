@@ -31,3 +31,4 @@
 /home/arbin/RiderProjects/Assignment3/Assignment3/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/arbin/RiderProjects/Assignment3/Assignment3/obj/Debug/net8.0/Assignment3.csproj.AssemblyReference.cache
 /home/arbin/RiderProjects/Assignment3/Assignment3/obj/Debug/net8.0/Assignme.63108F37.Up2Date
+/home/arbin/RiderProjects/Assignment3/Assignment3/obj/Debug/net8.0/Assignment3.sourcelink.json

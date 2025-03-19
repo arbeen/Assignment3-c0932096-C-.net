@@ -15,13 +15,15 @@ public static class SessionExtensions
         return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);  // Deserialize to object
     }
     
+    // Clears all session data
     public static void ClearSession(this ISession session)
     {
-        session.Clear();  // Clears all session data
+        session.Clear(); 
     }
     
+    // Removes the specified session key
     public static void RemoveSession(this ISession session, string key)
     {
-        session.Remove(key);  // Removes the specified session key
+        session.Remove(key);  
     }
 }

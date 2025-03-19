@@ -14,7 +14,7 @@ namespace Assignment3.Controllers
         private const string SessionKeyQuestions = "Questions";
         private const string SessionKeyAnswers = "Answers";
 
-        // Fisher-Yates shuffle for randomizing the list
+        // shuffle for randomizing the list
         private List<Question> ShuffleQuestions(List<Question> questions)
         {
             Random rng = new Random();
@@ -55,9 +55,6 @@ namespace Assignment3.Controllers
         {
             var questions = HttpContext.Session.GetObject<List<Question>>(SessionKeyQuestions);
             var answers = HttpContext.Session.GetObject<Dictionary<int, int?>>(SessionKeyAnswers);
-
-            // If session data is missing (quiz not started), redirect to start
-            if (questions == null || answers == null) return RedirectToAction("Start");
 
             // Pass index and selected answer (if any) to the view
             ViewBag.Index = index;
