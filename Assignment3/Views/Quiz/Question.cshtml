@@ -1,0 +1,38 @@
+@model Assignment3.Models.Question
+@{
+    int index = ViewBag.Index;
+}
+
+<h2>Question @(@index + 1)</h2>
+<p>@Model.Text</p>
+
+<form method="post" asp-action="Answer">
+    <input type="hidden" name="index" value="@index" />
+
+    @for (int i = 0; i < Model.Options.Count; i++)
+    {
+        <div>
+            <input type="radio" id="option_@i" name="selectedOption" value="@i" 
+                   @(ViewBag.SelectedOption == i ? "checked" : "") required />
+            <label for="option_@i">@Model.Options[i]</label>
+        </div>
+    }
+    @if (index > 0)
+    {
+        <a asp-action="Question" asp-route-index="@(index - 1)">
+            <button type="button">← Previous</button>
+        </a>
+    }
+    <button type="submit">
+        @if (index == 9)
+        {
+            <span>Submit</span>
+        }
+        else
+        {
+            <span>Next →</span>
+        }
+    </button>
+   
+</form>
+
